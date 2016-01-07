@@ -11,10 +11,8 @@ import org.camunda.bpm.engine.variable.VariableMap;
 import org.camunda.bpm.engine.variable.Variables;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ImportResource({"classpath*:dish-decision.dmn11.xml"})
 public class DishDecider
 {
 
@@ -52,7 +50,7 @@ public class DishDecider
         DmnEngine dmnEngine = DmnEngineConfiguration.createDefaultDmnEngineConfiguration().buildEngine();
 
         // parse decision from resource input stream
-        InputStream inputStream = DishDecider.class.getResourceAsStream("dish-decision.dmn11.xml");
+        InputStream inputStream = DishDecider.class.getResourceAsStream("/dish-decision.dmn11.xml");
 
         try
         {
